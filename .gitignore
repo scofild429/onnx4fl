@@ -19,3 +19,5 @@ README.tex
 collection.org
 gitlab.git
 github.git
+rust/onnxruntime-sys
+rust/onnxruntime

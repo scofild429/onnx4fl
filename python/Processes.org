@@ -1,0 +1,76 @@
+#+TITLE:  Data
+#+OPTIONS: num:t
+#+STARTUP: overview
+#+PROPERTY: header-args :eval no-export
+* Environment
+** Pytorch Vs. ONNX Vs. Tensorflow
+
+|---------+--------------+-----+------------+------------------------+---------+--------------+---------|
+| Pytorch | onnx         | opt | tensorflow | tensorflow-probability | onnx-tf | onnx2pytorch | Problem |
+|  1.16.1 | Dynamoscript |  17 |     2.18.0 |                 0.25.0 |  1.10.0 |              | B       |
+|  1.16.1 | Dynamoscript |  17 |     2.15.0 |                 0.23.0 |  1.10.0 |              | D       |
+|  1.16.1 | Torchscript  |  12 |     2.15.0 |                 0.23.0 |  1.10.0 |              | ?       |
+|  1.16.1 | Torchscript  |  17 |     2.18.0 |                 0.25.0 |  1.10.0 |              | A       |
+|  1.16.1 | Torchscript  |  13 |     2.15.0 |                 0.23.0 |  1.10.0 |              | C       |
+|  1.16.1 | Torchscript  |  12 |     2.15.0 |                 0.23.0 |  1.10.0 |              | DONE    |
+|  1.16.1 | Dynamoscript |  12 |     2.15.0 |                 0.23.0 |  1.10.0 |              | F       |
+|  1.16.1 | Torchscript  |  12 |     2.15.0 |                 0.23.0 |         |        0.5.1 | DONE    |
+|  1.16.1 | Dynamoscript |  12 |     2.15.0 |                 0.23.0 |         |        0.5.1 | E       |
+|---------+--------------+-----+------------+------------------------+---------+--------------+---------|
+
+
+
+
+|---+------------------------------------------------------------------------------------------------------------|
+| A | tensorflow-probabilitycan not found tf_keras                                                               |
+| B | tensorflow-probability can not found tf_keras                                                              |
+| C | BackendIsNotSupposedToImplementIt: Unsqueeze version 13 is not implemented.                                |
+| D | BackendIsNotSupposedToImplementIt: torch_nn_modules_container_Sequential_layers_1 is not implemented.      |
+| E | NotImplementedError: Conversion not implemented for op_type=torch_nn_modules_container_Sequential_layers_1 |
+| F |BackendIsNotSupposedToImplementIt: torch_nn_modules_container_Sequential_layers_1 is not implemented        |
+|---+------------------------------------------------------------------------------------------------------------|
+
+
+
+* Data
+** Training + inference
+
+|---------+------+-----+-----+------+---+--------+------+-----+-----+------+---+-------+------+-----+-----+------|
+| PyTorch | Time | Acc | GPU | Loss |   | Python | Time | Acc | GPU | Loss |   |   C++ | Time | Acc | GPU | Loss |
+|---------+------+-----+-----+------+---+--------+------+-----+-----+------+---+-------+------+-----+-----+------|
+|    0-20 |      |     |     |      |   |        |      |     |     |      |   |       |      |     |     |      |
+|      20 |      |     |     |      |   |     20 |      |     |     |      |   |    20 |      |     |     |      |
+|   20-40 |      |     |     |      |   |  20-40 |      |     |     |      |   | 20-40 |      |     |     |      |
+|      40 |      |     |     |      |   |     40 |      |     |     |      |   |    40 |      |     |     |      |
+|   40-60 |      |     |     |      |   |  40-40 |      |     |     |      |   | 40-40 |      |     |     |      |
+|      60 |      |     |     |      |   |     60 |      |     |     |      |   |    60 |      |     |     |      |
+
+
+
+** Inference model in PyTorch 
+|--------------+------+-----+-----+---+-----------------+------+-----+-----+---+-------------+------+-----+-----|
+| Static model | Time | Acc | GPU |   | State Parameter | Time | Acc | GPU |   | Check Point | Time | Acc | GPU |
+|--------------+------+-----+-----+---+-----------------+------+-----+-----+---+-------------+------+-----+-----|
+|           20 |      |     |     |   |              20 |      |     |     |   |          20 |      |     |     |
+|           40 |      |     |     |   |              40 |      |     |     |   |          40 |      |     |     |
+|           60 |      |     |     |   |              60 |      |     |     |   |          60 |      |     |     |
+
+
+
+** Inference ONNX to Framework
+|---------+------+-----+-----+---+------------+------+-----+-----|
+| PyTorch | Time | Acc | GPU |   | Tensorflow | Time | Acc | GPU |
+|---------+------+-----+-----+---+------------+------+-----+-----|
+|      20 |      |     |     |   |         20 |      |     |     |
+|      40 |      |     |     |   |         40 |      |     |     |
+|      60 |      |     |     |   |         60 |      |     |     |
+
+
+
+** Inference ONNX Runtime
+|----+------+-----+-----+---+------+------+-----+-----+---+----+------+-----+-----|
+|  C | Time | Acc | GPU |   | Rust | Time | Acc | GPU |   | JS | Time | Acc | GPU |
+|----+------+-----+-----+---+------+------+-----+-----+---+----+------+-----+-----|
+| 20 |      |     |     |   |   20 |      |     |     |   | 20 |      |     |     |
+| 40 |      |     |     |   |   40 |      |     |     |   | 40 |      |     |     |
+| 60 |      |     |     |   |   60 |      |     |     |   | 60 |      |     |     |

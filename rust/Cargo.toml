@@ -1,0 +1,10 @@
+[workspace]
+members = [
+    "onnxruntime-sys",
+    "onnxruntime",
+    "myonnx",
+]
+
+resolver = "2"
+
+

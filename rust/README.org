@@ -1,0 +1,38 @@
+- This project is based on the [[https://github.com/nbigaouette/onnxruntime-rs][nbigaouette github repository]], which is a wrapper of onnxruntime of C/C++ package. So onnxruntime dependencies has to be installed at first.
+
+#+begin_src sh :results output :exports none
+  export C_INCLUDE_PATH=$C_INCLUDE_PATH:/home/si/Desktop/onnxruntime/onnxruntime18training/include
+  export CPLUS_INCLUDE_PATH=$C_INCLUDE_PATH:/home/si/Desktop/onnxruntime/onnxruntime18training/include
+  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/si/Desktop/onnxruntime/onnxruntime18training/lib
+  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/si/Desktop/onnxruntime/onnxruntime18/lib
+#+end_src
+
+- Onnxruntime and onnxruntime-sys are the two dependencies crates, and myonnx are my crate for research purpose.
+- Be careful for the target-dir configuration in ./.cargo/config
+
+
+
+
+
+|-------------------------------------------|
+| target/release/myonnx  1 60  conversation |
+| target/release/myonnx  2 60  conversation |
+| target/release/myonnx  3 60  conversation |
+| target/release/myonnx  4 60  conversation |
+| target/release/myonnx  5 60  conversation |
+| target/release/myonnx  6 60  conversation |
+| target/release/myonnx  1 60  question     |
+| target/release/myonnx  2 60  question     |
+| target/release/myonnx  7 60  question     |
+| target/release/myonnx  8 60  question     |
+| target/release/myonnx  9 60  question     |
+| target/release/myonnx  10 60 question     |
+
+
+
+
+
+
+
+  
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/user/silin.zhao/u11656/.project/dir.lustre-grete/silin//onnxruntime/onnxruntime18/lib

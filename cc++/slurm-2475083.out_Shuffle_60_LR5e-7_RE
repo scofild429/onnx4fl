@@ -1,0 +1,103 @@
+================================================================================
+JobID = 2475083
+User = u11656, Account = auto_tads
+Partition = medium96s, Nodelist = c0120
+================================================================================
+You are doing ondevice training with C++ !
+The instance number for retraining is 9336
+The instance number for inference is 1556
+File exists: /mnt/lustre-emmy-hdd/usr/u11656/silin_onnx/data_binary_shuffle/60_conversation_Data_host_train
+File exists: /mnt/lustre-emmy-hdd/usr/u11656/silin_onnx/data_binary_shuffle/60_conversation_Label_host_train
+File exists: /mnt/lustre-emmy-hdd/usr/u11656/silin_onnx/data_binary_shuffle/60_conversation_Data_onnx_infer
+File exists: /mnt/lustre-emmy-hdd/usr/u11656/silin_onnx/data_binary_shuffle/60_conversation_Label_onnx_infer
+Old learning rate is : 0.001000
+New learning rate is : 0.0000005
+Loss for retraining at epoch 1 is 0.633446
+Loss for inference ---------------- is 2.10712
+Loss for retraining at epoch 2 is 0.444161
+Loss for inference ---------------- is 1.7824
+Loss for retraining at epoch 3 is 0.359422
+Loss for inference ---------------- is 1.63264
+Loss for retraining at epoch 4 is 0.313549
+Loss for inference ---------------- is 1.54609
+Loss for retraining at epoch 5 is 0.283229
+Loss for inference ---------------- is 1.48948
+Loss for retraining at epoch 6 is 0.261257
+Loss for inference ---------------- is 1.44942
+Loss for retraining at epoch 7 is 0.244448
+Loss for inference ---------------- is 1.41926
+Loss for retraining at epoch 8 is 0.231227
+Loss for inference ---------------- is 1.39645
+Loss for retraining at epoch 9 is 0.220678
+Loss for inference ---------------- is 1.37882
+Loss for retraining at epoch 10 is 0.212212
+Loss for inference ---------------- is 1.36515
+Loss for retraining at epoch 11 is 0.205407
+Loss for inference ---------------- is 1.35395
+Loss for retraining at epoch 12 is 0.199871
+Loss for inference ---------------- is 1.34541
+Loss for retraining at epoch 13 is 0.195289
+Loss for inference ---------------- is 1.3389
+Loss for retraining at epoch 14 is 0.191451
+Loss for inference ---------------- is 1.3345
+Loss for retraining at epoch 15 is 0.188227
+Loss for inference ---------------- is 1.33215
+Loss for retraining at epoch 16 is 0.185481
+Loss for inference ---------------- is 1.33137
+Loss for retraining at epoch 17 is 0.183135
+Loss for inference ---------------- is 1.33161
+Loss for retraining at epoch 18 is 0.181106
+Loss for inference ---------------- is 1.33329
+Loss for retraining at epoch 19 is 0.179334
+Loss for inference ---------------- is 1.33583
+Loss for retraining at epoch 20 is 0.177751
+Loss for inference ---------------- is 1.33903
+Loss for retraining at epoch 21 is 0.176326
+Loss for inference ---------------- is 1.34348
+Loss for retraining at epoch 22 is 0.175037
+Loss for inference ---------------- is 1.34858
+Loss for retraining at epoch 23 is 0.173869
+Loss for inference ---------------- is 1.35412
+Loss for retraining at epoch 24 is 0.172808
+Loss for inference ---------------- is 1.36041
+Loss for retraining at epoch 25 is 0.171835
+Loss for inference ---------------- is 1.36731
+Loss for retraining at epoch 26 is 0.170966
+Loss for inference ---------------- is 1.37466
+Loss for retraining at epoch 27 is 0.170158
+Loss for inference ---------------- is 1.38182
+Loss for retraining at epoch 28 is 0.169429
+Loss for inference ---------------- is 1.38952
+Loss for retraining at epoch 29 is 0.168755
+Loss for inference ---------------- is 1.39704
+Loss for retraining at epoch 30 is 0.16814
+Loss for inference ---------------- is 1.40415
+Loss for retraining at epoch 31 is 0.167572
+Loss for inference ---------------- is 1.41125
+Loss for retraining at epoch 32 is 0.167053
+Loss for inference ---------------- is 1.41945
+Loss for retraining at epoch 33 is 0.166587
+Loss for inference ---------------- is 1.42732
+Loss for retraining at epoch 34 is 0.166158
+Loss for inference ---------------- is 1.43613
+Loss for retraining at epoch 35 is 0.165751
+Loss for inference ---------------- is 1.44573
+Loss for retraining at epoch 36 is 0.165368
+Loss for inference ---------------- is 1.45503
+Loss for retraining at epoch 37 is 0.165016
+Loss for inference ---------------- is 1.4635
+Loss for retraining at epoch 38 is 0.164672
+Loss for inference ---------------- is 1.47341
+Loss for retraining at epoch 39 is 0.164341
+Loss for inference ---------------- is 1.48277
+Loss for retraining at epoch 40 is 0.164041
+Loss for inference ---------------- is 1.49251
+Time taken: 69387 seconds
+============ Job Information ===================================================
+Submitted: 2024-10-11T08:53:11
+Started: 2024-10-11T08:53:16
+Ended: 2024-10-12T04:09:47
+Elapsed: 1157 min, Limit: 1440 min, Difference: 283 min
+CPUs: 192, Nodes: 1
+Estimated Consumption: 2776.80 core-hours
+================================================================================

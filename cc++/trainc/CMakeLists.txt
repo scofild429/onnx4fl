@@ -1,0 +1,21 @@
+add_executable(trainc "trainc.cc")
+target_include_directories(trainc PRIVATE "${ONNXPATHTRAIN}/include")
+target_link_libraries(trainc PRIVATE "${ONNXPATHTRAIN}/lib/libonnxruntime.so")
+target_compile_definitions(trainc PRIVATE CHECKPOINT_PATH=\"${CHECKPOINT_PATH}\")
+target_compile_definitions(trainc PRIVATE TRAINING_MODEL_PATH=\"${TRAINING_MODEL_PATH}\")
+target_compile_definitions(trainc PRIVATE EVAL_MODEL_PATH=\"${EVAL_MODEL_PATH}\")
+target_compile_definitions(trainc PRIVATE OPTIMIZER_MODEL_PATH=\"${OPTIMIZER_MODEL_PATH}\")
+target_compile_definitions(trainc PRIVATE INSTANCE_NUMBER=${INSTANCE_NUMBER})
+target_compile_definitions(trainc PRIVATE INSTANCE_WORDS_LENGTH=${INSTANCE_WORDS_LENGTH})
+target_compile_definitions(trainc PRIVATE INSTANCE_WORDS_DIM=${INSTANCE_WORDS_DIM})
+target_compile_definitions(trainc PRIVATE TARGET_CLASS_NUMBER=${TARGET_CLASS_NUMBER})
+target_compile_definitions(trainc PRIVATE DATA_PATH=\"${DATA_PATH}\")
+target_compile_definitions(trainc PRIVATE LABEL_PATH=\"${LABEL_PATH}\")
+target_compile_definitions(trainc PRIVATE DATA_NAME=\"${DATA_NAME}\")
+target_compile_definitions(trainc PRIVATE LABEL_NAME=\"${LABEL_NAME}\")
+target_compile_definitions(trainc PRIVATE EPOCHS=${EPOCHS})
+
+target_compile_definitions(trainc PRIVATE LEARNING_RATE=\"${LEARNING_RATE}\")
+target_compile_definitions(trainc PRIVATE NEW_LEARNING_RATE=\"${NEW_LEARNING_RATE}\")
+
+

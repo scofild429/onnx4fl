@@ -1,0 +1,6 @@
+- Install onnxruntime-node at first, for other js use cases please refer to [[https://onnxruntime.ai/docs/api/js/]].
+- Be careful for the NODE_PATH  environment variable
+
+export NODE_HOME=/user/silin.zhao/u11656/.project/dir.lustre-grete/silin/node-v20.17.0-linux-x64/
+export PATH=$PATH:$NODE_HOME/bin
+

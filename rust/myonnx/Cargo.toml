@@ -1,0 +1,16 @@
+[package]
+name = "myonnx"
+version = "0.0.1"
+edition = "2021"
+
+[dependencies]
+onnxruntime = { path = "../onnxruntime" }
+tracing = "0.1"
+tracing-subscriber = "0.2"
+byteorder = "1.4"
+ndarray = "0.15"
+dotenvy = "0.15"
+config = "0.13"
+serde = { version = "1.0", features = ["derive"] }
+toml = "0.5.9"
+
